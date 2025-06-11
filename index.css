@@ -47,3 +47,10 @@ img {
     height: 200px;
     object-fit: cover;
 }
+/* 반응형 화면 너비가 768 이하일때만 적용*/
+@media(max-width:768px){
+    .container{
+        margin: 40px 20px;
+        padding: 20px;
+    }
+}
