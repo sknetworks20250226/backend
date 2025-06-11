@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, request
 
 # 객체생성
 app = Flask(__name__)
@@ -16,6 +16,11 @@ def projects():
     return render_template('projects.html')
 
 
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        return render_template('contact.html', success=True)
+    return render_template('contact.html', success=False)
 
 
 if __name__ == '__main__':
