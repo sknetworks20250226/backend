@@ -9,9 +9,26 @@
 <body>
     <div class = 'container'>
         <h1>안녕하세요! ✋</h1>
-        <p>자기소개글...</p>
+        <p>저는 개발 과 토론을 좋아하는 강쥐입니다... ^^</p>
         <img src="{{ url_for('static', filename='my.png')}}" alt="프로필 이미지"> 
-        <p><a href="https://github.com/sknetworks20250226/backend">github 바로가기</a></p>
+        <p>
+            <!-- <a href="https://github.com/sknetworks20250226/backend">1.github 바로가기</a>&nbsp;&nbsp;&nbsp;
+            <a href="/about">2.소개</a>&nbsp;&nbsp;&nbsp;
+            <a href="/projects">3.프로젝트</a>&nbsp;&nbsp;&nbsp;
+            <a href="/contact">4.연락하기</a> -->
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td><a href="https://github.com/sknetworks20250226/backend">1.github 바로가기</a></td>
+                    <td style="width: 10px;"></td>
+                    <td><a href="/about">2.소개</a></td>
+                    <td style="width: 10px;"></td>
+                    <td><a href="/projects">3.프로젝트</a></td>
+                    <td style="width: 10px;"></td>
+                    <td><a href="/contact">4.연락하기</a></td>
+                </tr>                
+            </table>
+
+        </p>
     </div>
 </body>
 </html>
