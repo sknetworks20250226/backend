@@ -1,4 +1,4 @@
-# 요청 / 응답 모델 정의
+# 요청 / 응답 모델(데이터 타입) 정의
 from pydantic import BaseModel
 
 class UserCreate(BaseModel):
@@ -17,4 +17,21 @@ class UserResponse(BaseModel):
 class ProductCreate(BaseModel):
     name: str
     price: int
-    
+
+class ProductOut(BaseModel):
+    id: int
+    name: str
+    price: int
+    class Config:   # 객체로 리턴할때
+        orm_mode = True    
+class CartItem(BaseModel):
+    user_id: int
+    product_id: int
+    quantity: int
+class OrderOut(BaseModel):
+    id: int
+    user_id: int    
+    product_id: int
+    quantity: int
+    class Config:   # 객체로 리턴할때
+        orm_mode = True    
