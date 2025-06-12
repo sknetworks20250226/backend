@@ -19,17 +19,33 @@
 주문 요청       post                /api/order          장바구니 상품 주문 처리
 
 주문 목록 조회  get                 /api/order?user_id=1    사용자 주문 내역
+
+
 ```
+# VSCode 에서 확장탭을 열고
+```
+SQLite Viewer 설치한다
+```
+
 # 가상환경  생성
 ```
 conda create -n api python
 ```
 
-
 # FAST API 설치
 ```
 pip install fastapi uvicorn sqlalchemy
 ```
+
+# 실행
+```
+main.py파일이 있는 backend 폴더로 이동해서
+uvicorn main:app --reload
+이후 브라우져에서
+http://127.0.0.1:8000/docs  실행한다.
+루트에 /docs를 하면 uvicorn에서 제공하는 swegger ui 사용
+```
+
 
 # 통신 규칙
 ```
