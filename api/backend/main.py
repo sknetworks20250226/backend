@@ -77,7 +77,7 @@ def create_produc(product: ProductCreate):
     db = SessionLocal()
     product = Product(name= product.name, price = product.price)
     db.add(product)
-    db.commit()
-    db.close()
+    db.commit()    
     db.refresh(product)
+    db.close()
     return {"success":True, "message":"상품 등록 완료",'product_id':product.id}    
