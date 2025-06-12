@@ -25,3 +25,15 @@
 ```
 pip install fastapi uvicorn sqlalchemy
 ```
+
+# 통신 규칙
+```
+통신        json 포멧으로 한다
+
+인증        쿠키.세션 대신 단순 로그인 응답으로 user_id 유지(js변수에 저장)
+
+응답메세지      {success:true, date: ..} 형식
+
+에러처리        {success:false, error: '메세지"} 통일
+```
+
