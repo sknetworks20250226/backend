@@ -24,6 +24,17 @@ class RegisterRequest(BaseModel):
     email: str
     passowrd: str
 
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+
+# 템플릿 디렉토리 설정
+# pip install jinja2
+templates = Jinja2Templates(directory="templates")
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+     
 
 # 라우터(요청에 응답하는)
 @app.post('/api/register')
