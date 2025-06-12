@@ -20,6 +20,11 @@
 
 주문 목록 조회  get                 /api/order?user_id=1    사용자 주문 내역
 ```
+# 가상환경  생성
+```
+conda create -n api python
+```
+
 
 # FAST API 설치
 ```
