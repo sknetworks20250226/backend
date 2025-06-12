@@ -58,3 +58,7 @@ http://127.0.0.1:8000/docs  실행한다.
 에러처리        {success:false, error: '메세지"} 통일
 ```
 
+# Fast API로 구현한 api와 html을 연결하려면  
+```
+main.py가 실행중인 폴더의 하위에 templates 폴더를 만들고 html파일을 저장한다
+```

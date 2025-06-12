@@ -22,6 +22,7 @@ class RegisterRequest(BaseModel):
     email: str
     passowrd: str
 
+
 # 라우터(요청에 응답하는)
 @app.post('/api/register')
 def register_user(user: RegisterRequest, db:Session=Depends(get_db)):
