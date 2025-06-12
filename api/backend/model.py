@@ -1,5 +1,5 @@
 # 데이터 베이스 테이블 정의
-from sqlalchemy import Column,Integer,String
+from sqlalchemy import Column,Integer,String,ForeignKey
 from database import Base
 
 class User(Base):  # 테이블  Base를 상속받아야만  sqlite 테이블 생성  
@@ -18,14 +18,14 @@ class Product(Base):
 class Cart(Base):
     __tablename__ ='cart'
     id = Column(Integer, primary_key=True, index=True)    
-    user_id = Column(Integer,foreign_keys = 'users.id')
-    product_id = Column(Integer,foreign_keys = 'products.id')
+    user_id = Column(Integer,ForeignKey('users.id'))
+    product_id = Column(Integer,ForeignKey('products.id'))
     quantity = Column(Integer)
 
 # 주문
 class Order(Base):
     __tablename__ ='orders'
     id = Column(Integer, primary_key=True, index=True)    
-    user_id = Column(Integer,foreign_keys = 'users.id')
-    product_id = Column(Integer,foreign_keys = 'products.id')
+    user_id = Column(Integer,ForeignKey('users.id'))
+    product_id = Column(Integer,ForeignKey('products.id'))
     quantity = Column(Integer)
