@@ -5,8 +5,10 @@ from sqlalchemy.orm import Session
 from model import *
 from database import SessionLocal,engin
 from schemas import *
+from fastapi.staticfiles import StaticFiles
 # Fast api 생성
 app = FastAPI()
+
 # 앱을 실행하면 DB에 정의된 모든 테이블을 생성
 Base.metadata.create_all(bind=engin)
 
@@ -129,5 +131,5 @@ def get_orders(user_id:int = Query(...),db:Session=Depends(get_db)):
     orders = db.query(Order).filter(Order.user_id == user_id).all()
     return orders
 
-
-
+# 정적 HTML 파일 서빙
+app.mount("/", StaticFiles(directory="templates", html=True), name="static")

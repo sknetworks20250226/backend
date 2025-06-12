@@ -13,7 +13,7 @@
 
             // for p in products
 
-            products.array.forEach(p => {
+            products.forEach(p => {
                 const li = document.createElement('li')
                 li.textContent = `${p.name} - ${p.price}원`
                 list.appendChild(li)
