@@ -19,6 +19,11 @@
 주문 요청       post                /api/order          장바구니 상품 주문 처리
 
 주문 목록 조회  get                 /api/order?user_id=1    사용자 주문 내역
+
+# VSCode 에서 확장탭을 열고
+```
+SQLite Viewer 설치한다
+```
 ```
 # 가상환경  생성
 ```
