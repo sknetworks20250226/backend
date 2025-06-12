@@ -20,3 +20,8 @@
 
 주문 목록 조회  get                 /api/order?user_id=1    사용자 주문 내역
 ```
+
+# FAST API 설치
+```
+pip install fastapi uvicorn sqlalchemy
+```
