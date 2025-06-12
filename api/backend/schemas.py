@@ -12,3 +12,9 @@ class UserResponse(BaseModel):
     # ORM 객체를 직렬화 할수 있도록 ==> DB에서 가져온 객체를 API응답으로 사용하기위해서
     class Config:
         orm_mode = True    
+
+# 상품 등록 데이터객체
+class ProductCreate(BaseModel):
+    name: str
+    price: int
+    
