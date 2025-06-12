@@ -125,7 +125,7 @@ def place_order(order: OrderRequest, db:Session=Depends(get_db)):
 #주문 목록 조회
 @app.get('api/order', response_model=List[OrderOut])
 def get_orders(user_id:int = Query(...),db:Session=Depends(get_db)):
-    orders = db.query(Order).filter(Order.user_id == user_id)
+    orders = db.query(Order).filter(Order.user_id == user_id).all()
     return orders
 
 
