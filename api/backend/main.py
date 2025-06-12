@@ -2,9 +2,9 @@
 from fastapi import FastAPI,HTTPException,Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from model import Base, User
+from model import *
 from database import SessionLocal,engin
-from schemas import UserCreate, UserResponse
+from schemas import *
 # Fast api 생성
 app = FastAPI()
 # 앱을 실행하면 DB에 정의된 모든 테이블을 생성
@@ -62,3 +62,22 @@ def get_user(user_id:int, db:Session=Depends(get_db) ):
     if not user:
         raise HTTPException(status_code=404, detail='사용자를 찾을수 없습니다.')
     return user
+
+from typing import List
+# 전체상품 조회
+@app.get('/api/products', response_model=List[ProductOut])
+def get_produc():
+    db = SessionLocal()
+    products = db.query(Product).all()
+    db.close()
+    return products
+# 상품 등록
+@app.post('/api/products')
+def create_produc(product: ProductCreate):
+    db = SessionLocal()
+    product = Product(name= product.name, price = product.price)
+    db.add(product)
+    db.commit()
+    db.close()
+    db.refresh(product)
+    return {"success":True, "message":"상품 등록 완료",'product_id':product.id}    
