@@ -37,6 +37,16 @@ conda create -n api python
 pip install fastapi uvicorn sqlalchemy
 ```
 
+# 실행
+```
+main.py파일이 있는 backend 폴더로 이동해서
+uvicorn main:app --reload
+이후 브라우져에서
+http://127.0.0.1:8000/docs  실행한다.
+루트에 /docs를 하면 uvicorn에서 제공하는 swegger ui 사용
+```
+
+
 # 통신 규칙
 ```
 통신        json 포멧으로 한다
